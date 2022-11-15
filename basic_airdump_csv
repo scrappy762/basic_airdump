@@ -1,0 +1,16 @@
+#!/bin/bash
+#script to run airdump capture at current location
+
+sudo airmon-ng start wlan0;
+sleep 10;
+
+echo "Enter One word describing capture"
+
+read var1
+
+echo "Enter Date DDMMMYY"
+
+read var2
+
+airodump-ng -w $var1$var2 -W -M --output-format csv wlan0mon
+;
